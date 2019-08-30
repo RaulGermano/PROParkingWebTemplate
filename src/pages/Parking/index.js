@@ -25,7 +25,7 @@ export default function Settings({ match }) {
 								<div className='d-flex'>
 									{/* <div className='image-profile bg-pro-parking'></div> */}
 									<div className='align-self-center ml-1'>
-										<h5 className='mb-1'>
+										<h5 className='mb-1 h2'>
 											PRO Parking Oficial
 										</h5>
 									</div>

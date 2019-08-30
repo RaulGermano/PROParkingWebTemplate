@@ -27,7 +27,9 @@ export default function Main({ match }) {
 								<div className='d-flex'>
 									{/* <div className='image-profile bg-pro-parking'></div> */}
 									<div className='align-self-center ml-1'>
-										<h5 className='mb-1'>Raul Germano</h5>
+										<h5 className='mb-1 h2'>
+											Raul Germano
+										</h5>
 										<p className='m-0'>Administrador</p>
 									</div>
 								</div>

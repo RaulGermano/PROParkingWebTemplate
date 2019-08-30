@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../componets/Header';
 import SideBar from '../../componets/SideBar';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { FaCircle, FaBookOpen, FaSignOutAlt } from 'react-icons/fa';
 import { MdAdd } from 'react-icons/md';
-
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory from 'react-bootstrap-table2-filter';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
+import NewParkingSpaceModal from '../../componets/Modal/NewParkingLot';
+
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 const { SearchBar } = Search;
 
 export default function ParkingLots({ match }) {
+	const [modalShow, setModalShow] = useState(false);
+
 	function openModalReleaseParked(id) {
 		console.log(id);
 	}
@@ -47,47 +50,36 @@ export default function ParkingLots({ match }) {
 
 	function optionsUserTypeFormatter(cell) {
 		return cell ? (
-			<span className='fw-600'>Administrador</span>
+			<FaCircle size={10} className='align-baseline ml-3 text-warning' />
 		) : (
-			<span>Colaborador</span>
+			<FaCircle
+				size={10}
+				className='align-baseline ml-3 text-dark opacity-3'
+			/>
 		);
 	}
 
 	const parked = [
 		{
 			id: 0,
-			nome: 'Raul Vitor Chiozini Germano',
-			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
+			nome: 'VGE1',
+			valor: 3.23,
+			ativa: true,
 			status: true
 		},
 		{
 			id: 1,
-			nome: 'Raul Vitor Chiozini Germano',
-			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
+			nome: 'VGE2',
+			valor: 4.4,
+			ativa: false,
 			status: true
 		},
 		{
 			id: 2,
-			nome: 'Raul Vitor Chiozini Germano',
-			email: 'raul.germano@icloud.com',
-			tipoUsuario: 0,
-			status: true
-		},
-		{
-			id: 3,
-			nome: 'Raul Vitor Chiozini Germano',
-			email: 'raul.germano@icloud.com',
-			tipoUsuario: 0,
-			status: true
-		},
-		{
-			id: 4,
-			nome: 'Raul Vitor Chiozini Germano',
-			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
-			status: true
+			nome: 'VGE3',
+			valor: 2.3,
+			ativa: true,
+			status: false
 		}
 	];
 
@@ -126,8 +118,8 @@ export default function ParkingLots({ match }) {
 			}
 		},
 		{
-			dataField: 'email',
-			text: 'E-Mail',
+			dataField: 'valor',
+			text: 'Valor por hora',
 
 			style: (cell, row, rowIndex, colIndex) => {
 				if (rowIndex % 2 === 0) {
@@ -141,8 +133,8 @@ export default function ParkingLots({ match }) {
 			}
 		},
 		{
-			dataField: 'tipoUsuario',
-			text: 'Tipo de usuário',
+			dataField: 'ativa',
+			text: 'Ativa',
 
 			formatter: optionsUserTypeFormatter,
 
@@ -249,16 +241,20 @@ export default function ParkingLots({ match }) {
 								<button
 									type='button'
 									className='btn btn-sm bg-pro-parking text-light shadow-sm'
-									data-toggle='modal'
-									data-target='#modalNewUser'
+									onClick={() => setModalShow(true)}
 								>
 									<MdAdd
 										size={22}
 										color='#fff'
 										className='pr-1'
 									/>
-									Novo usuário
+									Nova vaga
 								</button>
+
+								<NewParkingSpaceModal
+									show={modalShow}
+									onHide={() => setModalShow(false)}
+								/>
 							</div>
 						</div>
 
@@ -274,7 +270,7 @@ export default function ParkingLots({ match }) {
 									<>
 										<div className='d-flex justify-content-between mb-4'>
 											<h1 className='h4 text-black-50 fw-400 mb-4'>
-												Usuários
+												Minhas vagas
 											</h1>
 											<SearchBar
 												{...props.searchProps}

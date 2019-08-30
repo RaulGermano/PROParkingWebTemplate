@@ -217,7 +217,7 @@ export default function Custumers({ match }) {
 									<>
 										<div className='d-flex justify-content-between mb-4'>
 											<h1 className='h4 text-black-50 fw-400 mb-4'>
-												Usuários
+												Meus clientes
 											</h1>
 											<SearchBar
 												{...props.searchProps}
