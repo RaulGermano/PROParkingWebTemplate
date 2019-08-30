@@ -58,35 +58,30 @@ export default function Custumers({ match }) {
 			id: 0,
 			nome: 'Raul Vitor Chiozini Germano',
 			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
 			status: true
 		},
 		{
 			id: 1,
 			nome: 'Raul Vitor Chiozini Germano',
 			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
 			status: true
 		},
 		{
 			id: 2,
 			nome: 'Raul Vitor Chiozini Germano',
 			email: 'raul.germano@icloud.com',
-			tipoUsuario: 0,
 			status: true
 		},
 		{
 			id: 3,
 			nome: 'Raul Vitor Chiozini Germano',
 			email: 'raul.germano@icloud.com',
-			tipoUsuario: 0,
 			status: true
 		},
 		{
 			id: 4,
 			nome: 'Raul Vitor Chiozini Germano',
 			email: 'raul.germano@icloud.com',
-			tipoUsuario: 1,
 			status: true
 		}
 	];
@@ -128,23 +123,6 @@ export default function Custumers({ match }) {
 		{
 			dataField: 'email',
 			text: 'E-Mail',
-
-			style: (cell, row, rowIndex, colIndex) => {
-				if (rowIndex % 2 === 0) {
-					return {
-						backgroundColor: '#eeeeee'
-					};
-				}
-				return {
-					backgroundColor: '#fff'
-				};
-			}
-		},
-		{
-			dataField: 'tipoUsuario',
-			text: 'Tipo de usuário',
-
-			formatter: optionsUserTypeFormatter,
 
 			style: (cell, row, rowIndex, colIndex) => {
 				if (rowIndex % 2 === 0) {
