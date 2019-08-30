@@ -8,7 +8,7 @@ import NewFoneModal from '../../componets/Modal/NewFone';
 export default function Settings({ match }) {
 	const [nameUser, setNameUser] = useState('');
 	const [disabledField, setDisabledField] = useState(true);
-	const [modalShow, setModalShow] = React.useState(false);
+	const [modalShow, setModalShow] = useState(false);
 
 	return (
 		<>
@@ -120,7 +120,7 @@ export default function Settings({ match }) {
 											}}
 										>
 											<MdAdd
-												size={22}
+												size={27}
 												className='pr-1 text-light'
 											/>
 											Novo telefone

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../componets/Header';
 import SideBar from '../../componets/SideBar';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { FaCircle, FaBookOpen, FaSignOutAlt } from 'react-icons/fa';
 import { MdAdd } from 'react-icons/md';
+import NewUserModal from '../../componets/Modal/NewUser';
 
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory from 'react-bootstrap-table2-filter';
@@ -13,6 +14,8 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 const { SearchBar } = Search;
 
 export default function Main({ match }) {
+	const [modalShow, setModalShow] = useState(false);
+
 	function openModalReleaseParked(id) {
 		console.log(id);
 	}
@@ -237,18 +240,22 @@ export default function Main({ match }) {
 							</div>
 							<div>
 								<button
-									type='button'
 									className='btn btn-sm bg-pro-parking text-light shadow-sm'
-									data-toggle='modal'
-									data-target='#modalNewUser'
+									onClick={() => {
+										setModalShow(true);
+									}}
 								>
 									<MdAdd
-										size={22}
-										color='#fff'
-										className='pr-1'
+										size={27}
+										className='pr-1 text-light'
 									/>
 									Novo usuário
 								</button>
+
+								<NewUserModal
+									show={modalShow}
+									onHide={() => setModalShow(false)}
+								/>
 							</div>
 						</div>
 

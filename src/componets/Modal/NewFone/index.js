@@ -15,7 +15,7 @@ function NewFoneModal(props) {
 				<Modal.Title id='contained-modal-title-vcenter'>
 					<MdCall
 						size={30}
-						className='bg-primary rounded-circle p-lg-1 mr-2 text-light'
+						className='bg-primary rounded-circle p-lg-1 text-light'
 					/>
 					<span>Novo telefone</span>
 				</Modal.Title>

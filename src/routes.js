@@ -10,7 +10,7 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Users from './pages/Users';
 import Vehicle from './pages/Vehicle';
-import Settings from './pages/Settings';
+import Parking from './pages/Parking';
 
 function Routes() {
 	return (
@@ -25,7 +25,7 @@ function Routes() {
 			<Route path='/profile' component={Profile} />
 			<Route path='/users' component={Users} />
 			<Route path='/vehicle' component={Vehicle} />
-			<Route path='/settings' component={Settings} />
+			<Route path='/parking' component={Parking} />
 		</BrowserRouter>
 	);
 }

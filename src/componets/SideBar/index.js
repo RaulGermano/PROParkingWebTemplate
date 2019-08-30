@@ -62,8 +62,8 @@ export default function SideBar({ route }) {
 					/>
 					<SideBarItem
 						title='Estacionamento'
-						active={path === '/settings' ? true : false}
-						link='/settings'
+						active={path === '/parking' ? true : false}
+						link='/parking'
 						icon={
 							<MdAssignment
 								size={22}
