@@ -9,7 +9,8 @@ import {
 	MdShowChart,
 	MdBookmark,
 	MdInfo,
-	MdAssignment
+	MdAssignment,
+	MdHeadsetMic
 } from 'react-icons/md';
 
 export default function SideBar({ route }) {
@@ -84,6 +85,18 @@ export default function SideBar({ route }) {
 						active={path === '/about' ? true : false}
 						link='/about'
 						icon={<MdInfo size={22} className='mr-2 align-top' />}
+					/>
+
+					<SideBarItem
+						title='Suporte'
+						active={path === '/about' ? true : false}
+						link='/about'
+						icon={
+							<MdHeadsetMic
+								size={22}
+								className='mr-2 align-top'
+							/>
+						}
 					/>
 				</ul>
 			</div>
